@@ -1,5 +1,12 @@
 package iwsk;
 
+import java.awt.*;
+import java.awt.event.*;
+import java.util.*;
+import javax.swing.*;
+import javax.swing.GroupLayout;
+import javax.swing.LayoutStyle;
+import javax.swing.border.*;
 import gnu.io.SerialPort;
 import java.awt.Color;
 import org.jdesktop.application.Action;
@@ -17,18 +24,23 @@ import modbus.fun.RS232;
 import modbus.fun.SlaveModbusExecutor;
 
 
-    // Variables declaration - do not modify
+// Variables declaration - do not modify
 /**
  * The application's main frame.
  */
-public class IWSKView extends FrameView {
+public class IWSKView extends JFrame {
     Thread slaveThread;
     Master master;
     Slave slave;
-    public IWSKView(SingleFrameApplication app) {
-        super(app);
-        super.getFrame().setResizable(false);
-        initComponents();        
+//    public IWSKView(SingleFrameApplication app) {
+//        super(app);
+//        super.getFrame().setResizable(false);
+//        initComponents();
+//        CheckAvaiblePorts();
+//    }
+
+    public IWSKView() {
+        initComponents();
         CheckAvaiblePorts();
     }
 
@@ -60,378 +72,643 @@ public class IWSKView extends FrameView {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // Generated using JFormDesigner Evaluation license - i0rzs5+8dp9m7tskahhc
     private void initComponents() {
+        ResourceBundle bundle = ResourceBundle.getBundle("iwsk.resources.IWSKView");
+        mainPanel = new JPanel();
+        jPanel1 = new JPanel();
+        btnSend = new JButton();
+        tfFunction = new JTextField();
+        tfAddress = new JTextField();
+        tfMessage = new JTextField();
+        jSeparator3 = new JSeparator();
+        tfSendFrame = new JTextField();
+        jLabel1 = new JLabel();
+        tfGetFrame = new JTextField();
+        jLabel3 = new JLabel();
+        scrWindowMessage = new JScrollPane();
+        tfMessageWindow = new JTextArea();
+        pConfiguration = new JPanel();
+        lbSpeed = new JLabel();
+        lbTimeout2 = new JLabel();
+        lbTransmission = new JLabel();
+        cbSpeed = new JComboBox<>();
+        cbTransmission = new JComboBox<>();
+        cbTimeout2 = new JComboBox<>();
+        cbAddress = new JComboBox();
+        lbAddress = new JLabel();
+        cbStation = new JComboBox<>();
+        lbStation = new JLabel();
+        cbPortNumber = new JComboBox<>();
+        lbPortNumber = new JLabel();
+        btnSave = new JButton();
+        btnChange = new JButton();
+        lbTimeout3 = new JLabel();
+        cbTimeout3 = new JComboBox<>();
+        cbRetransmission = new JComboBox<>();
+        jLabel2 = new JLabel();
+        menuBar = new JMenuBar();
+        JMenu fileMenu = new JMenu();
+        JMenuItem exitMenuItem = new JMenuItem();
+        JMenu helpMenu = new JMenu();
+        JMenuItem aboutMenuItem = new JMenuItem();
 
-        mainPanel = new javax.swing.JPanel();
-        pConfiguration = new javax.swing.JPanel();
-        lbSpeed = new javax.swing.JLabel();
-        lbTimeout2 = new javax.swing.JLabel();
-        lbTransmission = new javax.swing.JLabel();
-        cbSpeed = new javax.swing.JComboBox();
-        cbTransmission = new javax.swing.JComboBox();
-        cbTimeout2 = new javax.swing.JComboBox();
-        cbAddress = new javax.swing.JComboBox();
-        lbAddress = new javax.swing.JLabel();
-        cbStation = new javax.swing.JComboBox();
-        lbStation = new javax.swing.JLabel();
-        cbPortNumber = new javax.swing.JComboBox();
-        lbPortNumber = new javax.swing.JLabel();
-        btnSave = new javax.swing.JButton();
-        btnChange = new javax.swing.JButton();
-        lbTimeout3 = new javax.swing.JLabel();
-        cbTimeout3 = new javax.swing.JComboBox();
-        cbRetransmission = new javax.swing.JComboBox();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        btnSend = new javax.swing.JButton();
-        tfFunction = new javax.swing.JTextField();
-        scrWindowMessage = new javax.swing.JScrollPane();
-        tfMessageWindow = new javax.swing.JTextArea();
-        tfAddress = new javax.swing.JTextField();
-        tfMessage = new javax.swing.JTextField();
-        jSeparator3 = new javax.swing.JSeparator();
-        tfSendFrame = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        tfGetFrame = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        menuBar = new javax.swing.JMenuBar();
-        javax.swing.JMenu fileMenu = new javax.swing.JMenu();
-        javax.swing.JMenuItem exitMenuItem = new javax.swing.JMenuItem();
-        javax.swing.JMenu helpMenu = new javax.swing.JMenu();
-        javax.swing.JMenuItem aboutMenuItem = new javax.swing.JMenuItem();
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        //======== mainPanel ========
+        {
+            mainPanel.setName("mainPanel");
+            mainPanel.setPreferredSize(new Dimension(920, 430));
+            mainPanel.setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border. EmptyBorder( 0
+            , 0, 0, 0) , "JFor\u006dDesi\u0067ner \u0045valu\u0061tion", javax. swing. border. TitledBorder. CENTER, javax. swing. border. TitledBorder. BOTTOM
+            , new java .awt .Font ("Dia\u006cog" ,java .awt .Font .BOLD ,12 ), java. awt. Color. red) ,
+            mainPanel. getBorder( )) ); mainPanel. addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e
+            ) {if ("bord\u0065r" .equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
 
-        mainPanel.setName("mainPanel"); // NOI18N
-        mainPanel.setPreferredSize(new java.awt.Dimension(600, 280));
+            //======== jPanel1 ========
+            {
+                jPanel1.setName("jPanel1");
 
-        pConfiguration.setName("pConfiguration"); // NOI18N
+                //---- btnSend ----
+                btnSend.setText(bundle.getString("btnSend.text"));
+                btnSend.setEnabled(false);
+                btnSend.setFocusCycleRoot(true);
+                btnSend.setName("btnSend");
+                btnSend.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        btnSendMouseClicked(e);
+                    }
+                });
 
-        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(iwsk.IWSKApp.class).getContext().getResourceMap(IWSKView.class);
-        lbSpeed.setText(resourceMap.getString("lbSpeed.text")); // NOI18N
-        lbSpeed.setName("lbSpeed"); // NOI18N
+                //---- tfFunction ----
+                tfFunction.setBackground(new Color(240, 240, 240));
+                tfFunction.setText(bundle.getString("tfFunction.text"));
+                tfFunction.setBorder(LineBorder.createBlackLineBorder());
+                tfFunction.setEnabled(false);
+                tfFunction.setName("tfFunction");
 
-        lbTimeout2.setText(resourceMap.getString("lbTimeout2.text")); // NOI18N
-        lbTimeout2.setName("lbTimeout2"); // NOI18N
+                //---- tfAddress ----
+                tfAddress.setBackground(new Color(240, 240, 240));
+                tfAddress.setText(bundle.getString("tfAddress.text"));
+                tfAddress.setBorder(LineBorder.createBlackLineBorder());
+                tfAddress.setEnabled(false);
+                tfAddress.setName("tfAddress");
 
-        lbTransmission.setText(resourceMap.getString("lbTransmission.text")); // NOI18N
-        lbTransmission.setName("lbTransmission"); // NOI18N
+                //---- tfMessage ----
+                tfMessage.setBackground(new Color(240, 240, 240));
+                tfMessage.setText(bundle.getString("tfMessage.text"));
+                tfMessage.setBorder(LineBorder.createBlackLineBorder());
+                tfMessage.setEnabled(false);
+                tfMessage.setName("tfMessage");
 
-        cbSpeed.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "9600", "4800", "2400", "1200", "600", "300", "150" }));
-        cbSpeed.setName("cbSpeed"); // NOI18N
+                //---- jSeparator3 ----
+                jSeparator3.setOrientation(SwingConstants.VERTICAL);
+                jSeparator3.setName("jSeparator3");
 
-        cbTransmission.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "7E1", "7O1", "7N2" }));
-        cbTransmission.setName("cbTransmission"); // NOI18N
+                //---- tfSendFrame ----
+                tfSendFrame.setText(bundle.getString("tfSendFrame.text"));
+                tfSendFrame.setName("tfSendFrame");
 
-        cbTimeout2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0.01", "0.02", "0.03", "0.04", "0.05", "0.06", "0.07", "0.08", "0.09", "0.10", "0.11", "0.12", "0.13", "0.14", "0.15", "0.16", "0.17", "0.18", "0.19", "0.20", "0.21", "0.22", "0.23", "0.24", "0.25", "0.26", "0.27", "0.28", "0.29", "0.30", "0.31", "0.32", "0.33", "0.34", "0.35", "0.36", "0.37", "0.38", "0.39", "0.40", "0.41", "0.42", "0.43", "0.44", "0.45", "0.46", "0.47", "0.48", "0.49", "0.50", "0.51", "0.52", "0.53", "0.54", "0.55", "0.56", "0.57", "0.58", "0.59", "0.60", "0.61", "0.62", "0.63", "0.64", "0.65", "0.66", "0.67", "0.68", "0.69", "0.70", "0.71", "0.72", "0.73", "0.74", "0.75", "0.76", "0.77", "0.78", "0.79", "0.80", "0.81", "0.82", "0.83", "0.84", "0.85", "0.86", "0.87", "0.88", "0.89", "0.90", "0.91", "0.92", "0.93", "0.94", "0.95", "0.96", "0.97", "0.98", "0.99", "1.00" }));
-        cbTimeout2.setName("cbTimeout2"); // NOI18N
+                //---- jLabel1 ----
+                jLabel1.setText(bundle.getString("jLabel1.text"));
+                jLabel1.setName("jLabel1");
 
-        cbAddress.setModel(new javax.swing.DefaultComboBoxModel(new String[] {"0"}));
-        cbAddress.setEnabled(false);
-        cbAddress.setName("cbAddress"); // NOI18N
+                //---- tfGetFrame ----
+                tfGetFrame.setText(bundle.getString("tfGetFrame.text"));
+                tfGetFrame.setName("tfGetFrame");
 
-        lbAddress.setText(resourceMap.getString("lbAddress.text")); // NOI18N
-        lbAddress.setName("lbAddress"); // NOI18N
+                //---- jLabel3 ----
+                jLabel3.setText(bundle.getString("jLabel3.text"));
+                jLabel3.setName("jLabel3");
 
-        cbStation.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Master", "Slave" }));
-        cbStation.setName("cbStation"); // NOI18N
-        cbStation.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                cbStationItemStateChanged(evt);
+                GroupLayout jPanel1Layout = new GroupLayout(jPanel1);
+                jPanel1.setLayout(jPanel1Layout);
+                jPanel1Layout.setHorizontalGroup(
+                    jPanel1Layout.createParallelGroup()
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jSeparator3)
+                            .addGap(441, 441, 441))
+                        .addGroup(GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addContainerGap(17, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createParallelGroup()
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(tfAddress, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tfFunction, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tfMessage, GroupLayout.PREFERRED_SIZE, 216, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(btnSend, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(tfSendFrame, GroupLayout.PREFERRED_SIZE, 320, GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(tfGetFrame, GroupLayout.PREFERRED_SIZE, 320, GroupLayout.PREFERRED_SIZE)))))
+                );
+                jPanel1Layout.setVerticalGroup(
+                    jPanel1Layout.createParallelGroup()
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(16, 16, 16)
+                            .addGroup(jPanel1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                .addComponent(tfMessage, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tfFunction, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnSend, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tfAddress, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                            .addGap(18, 18, 18)
+                            .addGroup(jPanel1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel3)
+                                .addComponent(tfGetFrame, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanel1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel1)
+                                .addComponent(tfSendFrame, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                            .addGap(249, 249, 249)
+                            .addComponent(jSeparator3))
+                );
             }
-        });
 
-        lbStation.setText(resourceMap.getString("lbStation.text")); // NOI18N
-        lbStation.setName("lbStation"); // NOI18N
+            //======== scrWindowMessage ========
+            {
+                scrWindowMessage.setAutoscrolls(true);
+                scrWindowMessage.setName("scrWindowMessage");
 
-        cbPortNumber.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cbPortNumber.setName("cbPortNumber"); // NOI18N
-
-        lbPortNumber.setText(resourceMap.getString("lbPortNumber.text")); // NOI18N
-        lbPortNumber.setName("lbPortNumber"); // NOI18N
-
-        btnSave.setText(resourceMap.getString("btnSave.text")); // NOI18N
-        btnSave.setName("btnSave"); // NOI18N
-        btnSave.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnSaveMouseClicked(evt);
+                //---- tfMessageWindow ----
+                tfMessageWindow.setColumns(15);
+                tfMessageWindow.setEditable(false);
+                tfMessageWindow.setFont(new Font("Courier", Font.PLAIN, 10));
+                tfMessageWindow.setLineWrap(true);
+                tfMessageWindow.setRows(5);
+                tfMessageWindow.setWrapStyleWord(true);
+                tfMessageWindow.setName("tfMessageWindow");
+                scrWindowMessage.setViewportView(tfMessageWindow);
             }
-        });
 
-        btnChange.setText(resourceMap.getString("btnChange.text")); // NOI18N
-        btnChange.setEnabled(false);
-        btnChange.setName("btnChange"); // NOI18N
-        btnChange.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnChangeMouseClicked(evt);
+            //======== pConfiguration ========
+            {
+                pConfiguration.setName("pConfiguration");
+
+                //---- lbSpeed ----
+                lbSpeed.setText(bundle.getString("lbSpeed.text"));
+                lbSpeed.setName("lbSpeed");
+
+                //---- lbTimeout2 ----
+                lbTimeout2.setText(bundle.getString("lbTimeout2.text"));
+                lbTimeout2.setName("lbTimeout2");
+
+                //---- lbTransmission ----
+                lbTransmission.setText(bundle.getString("lbTransmission.text"));
+                lbTransmission.setName("lbTransmission");
+
+                //---- cbSpeed ----
+                cbSpeed.setModel(new DefaultComboBoxModel<>(new String[] {
+                    "9600",
+                    "4800",
+                    "2400",
+                    "1200",
+                    "600",
+                    "300",
+                    "150"
+                }));
+                cbSpeed.setName("cbSpeed");
+
+                //---- cbTransmission ----
+                cbTransmission.setModel(new DefaultComboBoxModel<>(new String[] {
+                    "7E1",
+                    "7O1",
+                    "7N2"
+                }));
+                cbTransmission.setName("cbTransmission");
+
+                //---- cbTimeout2 ----
+                cbTimeout2.setModel(new DefaultComboBoxModel<>(new String[] {
+                    "0.01",
+                    "0.02",
+                    "0.03",
+                    "0.04",
+                    "0.05",
+                    "0.06",
+                    "0.07",
+                    "0.08",
+                    "0.09",
+                    "0.10",
+                    "0.11",
+                    "0.12",
+                    "0.13",
+                    "0.14",
+                    "0.15",
+                    "0.16",
+                    "0.17",
+                    "0.18",
+                    "0.19",
+                    "0.20",
+                    "0.21",
+                    "0.22",
+                    "0.23",
+                    "0.24",
+                    "0.25",
+                    "0.26",
+                    "0.27",
+                    "0.28",
+                    "0.29",
+                    "0.30",
+                    "0.31",
+                    "0.32",
+                    "0.33",
+                    "0.34",
+                    "0.35",
+                    "0.36",
+                    "0.37",
+                    "0.38",
+                    "0.39",
+                    "0.40",
+                    "0.41",
+                    "0.42",
+                    "0.43",
+                    "0.44",
+                    "0.45",
+                    "0.46",
+                    "0.47",
+                    "0.48",
+                    "0.49",
+                    "0.50",
+                    "0.51",
+                    "0.52",
+                    "0.53",
+                    "0.54",
+                    "0.55",
+                    "0.56",
+                    "0.57",
+                    "0.58",
+                    "0.59",
+                    "0.60",
+                    "0.61",
+                    "0.62",
+                    "0.63",
+                    "0.64",
+                    "0.65",
+                    "0.66",
+                    "0.67",
+                    "0.68",
+                    "0.69",
+                    "0.70",
+                    "0.71",
+                    "0.72",
+                    "0.73",
+                    "0.74",
+                    "0.75",
+                    "0.76",
+                    "0.77",
+                    "0.78",
+                    "0.79",
+                    "0.80",
+                    "0.81",
+                    "0.82",
+                    "0.83",
+                    "0.84",
+                    "0.85",
+                    "0.86",
+                    "0.87",
+                    "0.88",
+                    "0.89",
+                    "0.90",
+                    "0.91",
+                    "0.92",
+                    "0.93",
+                    "0.94",
+                    "0.95",
+                    "0.96",
+                    "0.97",
+                    "0.98",
+                    "0.99",
+                    "1.00"
+                }));
+                cbTimeout2.setName("cbTimeout2");
+
+                //---- cbAddress ----
+                cbAddress.setEnabled(false);
+                cbAddress.setName("cbAddress");
+
+                //---- lbAddress ----
+                lbAddress.setText(bundle.getString("lbAddress.text"));
+                lbAddress.setName("lbAddress");
+
+                //---- cbStation ----
+                cbStation.setModel(new DefaultComboBoxModel<>(new String[] {
+                    "Master",
+                    "Slave"
+                }));
+                cbStation.setName("cbStation");
+                cbStation.addItemListener(e -> cbStationItemStateChanged(e));
+
+                //---- lbStation ----
+                lbStation.setText(bundle.getString("lbStation.text"));
+                lbStation.setName("lbStation");
+
+                //---- cbPortNumber ----
+                cbPortNumber.setModel(new DefaultComboBoxModel<>(new String[] {
+                    "Item 1",
+                    "Item 2",
+                    "Item 3",
+                    "Item 4"
+                }));
+                cbPortNumber.setName("cbPortNumber");
+
+                //---- lbPortNumber ----
+                lbPortNumber.setText(bundle.getString("lbPortNumber.text"));
+                lbPortNumber.setName("lbPortNumber");
+
+                //---- btnSave ----
+                btnSave.setText(bundle.getString("btnSave.text"));
+                btnSave.setName("btnSave");
+                btnSave.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        btnSaveMouseClicked(e);
+                    }
+                });
+
+                //---- btnChange ----
+                btnChange.setText(bundle.getString("btnChange.text"));
+                btnChange.setEnabled(false);
+                btnChange.setName("btnChange");
+                btnChange.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        btnChangeMouseClicked(e);
+                    }
+                });
+
+                //---- lbTimeout3 ----
+                lbTimeout3.setText(bundle.getString("lbTimeout3.text"));
+                lbTimeout3.setName("lbTimeout3");
+
+                //---- cbTimeout3 ----
+                cbTimeout3.setModel(new DefaultComboBoxModel<>(new String[] {
+                    "0.1",
+                    "0.2",
+                    "0.3",
+                    "0.4",
+                    "0.5",
+                    "0.6",
+                    "0.7",
+                    "0.8",
+                    "0.9",
+                    "1.0",
+                    "1.1",
+                    "1.2",
+                    "1.3",
+                    "1.4",
+                    "1.5",
+                    "1.6",
+                    "1.7",
+                    "1.8",
+                    "1.9",
+                    "2.0",
+                    "2.1",
+                    "2.2",
+                    "2.3",
+                    "2.4",
+                    "2.5",
+                    "2.6",
+                    "2.7",
+                    "2.8",
+                    "2.9",
+                    "3.0",
+                    "3.1",
+                    "3.2",
+                    "3.3",
+                    "3.4",
+                    "3.5",
+                    "3.6",
+                    "3.7",
+                    "3.8",
+                    "3.9",
+                    "4.0",
+                    "4.1",
+                    "4.2",
+                    "4.3",
+                    "4.4",
+                    "4.5",
+                    "4.6",
+                    "4.7",
+                    "4.8",
+                    "4.9",
+                    "5.0",
+                    "5.1",
+                    "5.2",
+                    "5.3",
+                    "5.4",
+                    "5.5",
+                    "5.6",
+                    "5.7",
+                    "5.8",
+                    "5.9",
+                    "6.0",
+                    "6.1",
+                    "6.2",
+                    "6.3",
+                    "6.4",
+                    "6.5",
+                    "6.6",
+                    "6.7",
+                    "6.8",
+                    "6.9",
+                    "7.0",
+                    "7.1",
+                    "7.2",
+                    "7.3",
+                    "7.4",
+                    "7.5",
+                    "7.6",
+                    "7.7",
+                    "7.8",
+                    "7.9",
+                    "8.0",
+                    "8.1",
+                    "8.2",
+                    "8.3",
+                    "8.4",
+                    "8.5",
+                    "8.6",
+                    "8.7",
+                    "8.8",
+                    "8.9",
+                    "9.0",
+                    "9.1",
+                    "9.2",
+                    "9.3",
+                    "9.4",
+                    "9.5",
+                    "9.6",
+                    "9.7",
+                    "9.8",
+                    "9.9",
+                    "10.0"
+                }));
+                cbTimeout3.setName("cbTimeout3");
+
+                //---- cbRetransmission ----
+                cbRetransmission.setModel(new DefaultComboBoxModel<>(new String[] {
+                    "5",
+                    "4",
+                    "3",
+                    "2",
+                    "1",
+                    "0"
+                }));
+                cbRetransmission.setName("cbRetransmission");
+
+                //---- jLabel2 ----
+                jLabel2.setText(bundle.getString("jLabel2.text"));
+                jLabel2.setName("jLabel2");
+
+                GroupLayout pConfigurationLayout = new GroupLayout(pConfiguration);
+                pConfiguration.setLayout(pConfigurationLayout);
+                pConfigurationLayout.setHorizontalGroup(
+                    pConfigurationLayout.createParallelGroup()
+                        .addGroup(GroupLayout.Alignment.TRAILING, pConfigurationLayout.createSequentialGroup()
+                            .addGroup(pConfigurationLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                .addGroup(pConfigurationLayout.createSequentialGroup()
+                                    .addGap(29, 29, 29)
+                                    .addGroup(pConfigurationLayout.createParallelGroup()
+                                        .addGroup(pConfigurationLayout.createSequentialGroup()
+                                            .addGroup(pConfigurationLayout.createParallelGroup()
+                                                .addComponent(lbSpeed)
+                                                .addComponent(lbTransmission))
+                                            .addGap(25, 25, 25)
+                                            .addGroup(pConfigurationLayout.createParallelGroup()
+                                                .addComponent(cbTransmission, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(cbSpeed, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE)))
+                                        .addGroup(pConfigurationLayout.createSequentialGroup()
+                                            .addGroup(pConfigurationLayout.createParallelGroup()
+                                                .addComponent(lbTimeout2)
+                                                .addComponent(lbTimeout3))
+                                            .addGap(18, 18, 18)
+                                            .addGroup(pConfigurationLayout.createParallelGroup()
+                                                .addComponent(cbTimeout2, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(cbTimeout3, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE))))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(pConfigurationLayout.createParallelGroup()
+                                        .addComponent(lbStation)
+                                        .addComponent(lbAddress)
+                                        .addComponent(jLabel2)
+                                        .addComponent(lbPortNumber))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(pConfigurationLayout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(cbAddress, GroupLayout.Alignment.LEADING)
+                                        .addComponent(cbStation)
+                                        .addComponent(cbPortNumber)
+                                        .addComponent(cbRetransmission, GroupLayout.Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(pConfigurationLayout.createSequentialGroup()
+                                    .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnSave, GroupLayout.PREFERRED_SIZE, 69, GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(btnChange, GroupLayout.PREFERRED_SIZE, 69, GroupLayout.PREFERRED_SIZE)))
+                            .addGap(25, 25, 25))
+                );
+                pConfigurationLayout.setVerticalGroup(
+                    pConfigurationLayout.createParallelGroup()
+                        .addGroup(pConfigurationLayout.createSequentialGroup()
+                            .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(pConfigurationLayout.createParallelGroup()
+                                .addGroup(pConfigurationLayout.createSequentialGroup()
+                                    .addGroup(pConfigurationLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(lbPortNumber)
+                                        .addComponent(cbPortNumber, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(pConfigurationLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(lbStation)
+                                        .addComponent(cbStation, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(pConfigurationLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(lbAddress)
+                                        .addComponent(cbAddress, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(pConfigurationLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel2)
+                                        .addComponent(cbRetransmission, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(pConfigurationLayout.createSequentialGroup()
+                                    .addGroup(pConfigurationLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(lbSpeed)
+                                        .addComponent(cbSpeed, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                    .addGap(7, 7, 7)
+                                    .addGroup(pConfigurationLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(lbTransmission)
+                                        .addComponent(cbTransmission, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(pConfigurationLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(lbTimeout2)
+                                        .addComponent(cbTimeout2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(pConfigurationLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(lbTimeout3)
+                                        .addComponent(cbTimeout3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(pConfigurationLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                .addComponent(btnChange)
+                                .addComponent(btnSave))
+                            .addGap(80, 80, 80))
+                );
             }
-        });
 
-        lbTimeout3.setText(resourceMap.getString("lbTimeout3.text")); // NOI18N
-        lbTimeout3.setName("lbTimeout3"); // NOI18N
+            GroupLayout mainPanelLayout = new GroupLayout(mainPanel);
+            mainPanel.setLayout(mainPanelLayout);
+            mainPanelLayout.setHorizontalGroup(
+                mainPanelLayout.createParallelGroup()
+                    .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(scrWindowMessage, GroupLayout.PREFERRED_SIZE, 407, GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addGroup(mainPanelLayout.createParallelGroup()
+                            .addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pConfiguration, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(2, Short.MAX_VALUE))
+            );
+            mainPanelLayout.setVerticalGroup(
+                mainPanelLayout.createParallelGroup()
+                    .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addGroup(mainPanelLayout.createParallelGroup()
+                            .addComponent(scrWindowMessage, GroupLayout.PREFERRED_SIZE, 371, GroupLayout.PREFERRED_SIZE)
+                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                .addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 146, GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(pConfiguration, GroupLayout.PREFERRED_SIZE, 211, GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(24, Short.MAX_VALUE))
+            );
+        }
 
-        cbTimeout3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "2.0", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9", "3.0", "3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8", "3.9", "4.0", "4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.8", "4.9", "5.0", "5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "5.9", "6.0", "6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "6.7", "6.8", "6.9", "7.0", "7.1", "7.2", "7.3", "7.4", "7.5", "7.6", "7.7", "7.8", "7.9", "8.0", "8.1", "8.2", "8.3", "8.4", "8.5", "8.6", "8.7", "8.8", "8.9", "9.0", "9.1", "9.2", "9.3", "9.4", "9.5", "9.6", "9.7", "9.8", "9.9", "10.0" }));
-        cbTimeout3.setName("cbTimeout3"); // NOI18N
+        //======== menuBar ========
+        {
+            menuBar.setName("menuBar");
 
-        cbRetransmission.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "5", "4", "3", "2", "1", "0" }));
-        cbRetransmission.setName("cbRetransmission"); // NOI18N
+            //======== fileMenu ========
+            {
+                fileMenu.setText(bundle.getString("fileMenu.text"));
+                fileMenu.setName("fileMenu");
 
-        jLabel2.setText(resourceMap.getString("jLabel2.text")); // NOI18N
-        jLabel2.setName("jLabel2"); // NOI18N
-
-        org.jdesktop.layout.GroupLayout pConfigurationLayout = new org.jdesktop.layout.GroupLayout(pConfiguration);
-        pConfiguration.setLayout(pConfigurationLayout);
-        pConfigurationLayout.setHorizontalGroup(
-            pConfigurationLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(pConfigurationLayout.createSequentialGroup()
-                .addContainerGap()
-                .add(pConfigurationLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(pConfigurationLayout.createSequentialGroup()
-                        .add(pConfigurationLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(lbTransmission)
-                            .add(lbSpeed))
-                        .add(15, 15, 15)
-                        .add(pConfigurationLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(cbTransmission, 0, 75, Short.MAX_VALUE)
-                            .add(cbSpeed, 0, 75, Short.MAX_VALUE)))
-                    .add(pConfigurationLayout.createSequentialGroup()
-                        .add(pConfigurationLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(lbTimeout2)
-                            .add(lbTimeout3))
-                        .add(9, 9, 9)
-                        .add(pConfigurationLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(cbTimeout3, 0, 75, Short.MAX_VALUE)
-                            .add(cbTimeout2, 0, 75, Short.MAX_VALUE)))
-                    .add(pConfigurationLayout.createSequentialGroup()
-                        .add(lbPortNumber)
-                        .add(46, 46, 46)
-                        .add(cbPortNumber, 0, 75, Short.MAX_VALUE))
-                    .add(pConfigurationLayout.createSequentialGroup()
-                        .add(pConfigurationLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(lbStation)
-                            .add(lbAddress)
-                            .add(jLabel2))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(pConfigurationLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(org.jdesktop.layout.GroupLayout.TRAILING, cbAddress, 0, 75, Short.MAX_VALUE)
-                            .add(org.jdesktop.layout.GroupLayout.TRAILING, cbStation, 0, 75, Short.MAX_VALUE)
-                            .add(cbRetransmission, 0, 75, Short.MAX_VALUE)))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, pConfigurationLayout.createSequentialGroup()
-                        .add(btnSave, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 69, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(btnChange, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        pConfigurationLayout.setVerticalGroup(
-            pConfigurationLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(pConfigurationLayout.createSequentialGroup()
-                .addContainerGap()
-                .add(pConfigurationLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(lbSpeed)
-                    .add(cbSpeed, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(7, 7, 7)
-                .add(pConfigurationLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(lbTransmission)
-                    .add(cbTransmission, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(pConfigurationLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(lbTimeout2)
-                    .add(cbTimeout2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(pConfigurationLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(lbTimeout3)
-                    .add(cbTimeout3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(pConfigurationLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(cbPortNumber, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(lbPortNumber))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(pConfigurationLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(lbStation)
-                    .add(cbStation, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(pConfigurationLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(cbAddress, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(lbAddress))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(pConfigurationLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(cbRetransmission, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jLabel2))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(pConfigurationLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(btnSave)
-                    .add(btnChange))
-                .addContainerGap(13, Short.MAX_VALUE))
-        );
-
-        jPanel2.setName("jPanel2"); // NOI18N
-
-        org.jdesktop.layout.GroupLayout jPanel2Layout = new org.jdesktop.layout.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 100, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 100, Short.MAX_VALUE)
-        );
-
-        jPanel1.setName("jPanel1"); // NOI18N
-
-        btnSend.setText(resourceMap.getString("btnSend.text")); // NOI18N
-        btnSend.setEnabled(false);
-        btnSend.setFocusCycleRoot(true);
-        btnSend.setName("btnSend"); // NOI18N
-        btnSend.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnSendMouseClicked(evt);
+                //---- exitMenuItem ----
+                exitMenuItem.setText(bundle.getString("exitMenuItem.text"));
+                exitMenuItem.setName("exitMenuItem");
+                fileMenu.add(exitMenuItem);
             }
-        });
+            menuBar.add(fileMenu);
 
-        tfFunction.setBackground(resourceMap.getColor("tfFunction.background")); // NOI18N
-        tfFunction.setText(resourceMap.getString("tfFunction.text")); // NOI18N
-        tfFunction.setBorder(javax.swing.BorderFactory.createLineBorder(resourceMap.getColor("tfFunction.border.lineColor"))); // NOI18N
-        tfFunction.setEnabled(false);
-        tfFunction.setName("tfFunction"); // NOI18N
+            //======== helpMenu ========
+            {
+                helpMenu.setText(bundle.getString("helpMenu.text"));
+                helpMenu.setName("helpMenu");
 
-        scrWindowMessage.setAutoscrolls(true);
-        scrWindowMessage.setName("scrWindowMessage"); // NOI18N
-
-        tfMessageWindow.setColumns(15);
-        tfMessageWindow.setEditable(false);
-        tfMessageWindow.setFont(new java.awt.Font("Courier", 0, 10));
-        tfMessageWindow.setLineWrap(true);
-        tfMessageWindow.setRows(5);
-        tfMessageWindow.setWrapStyleWord(true);
-        tfMessageWindow.setName("tfMessageWindow"); // NOI18N
-        scrWindowMessage.setViewportView(tfMessageWindow);
-
-        tfAddress.setBackground(resourceMap.getColor("tfAddress.background")); // NOI18N
-        tfAddress.setText(resourceMap.getString("tfAddress.text")); // NOI18N
-        tfAddress.setBorder(javax.swing.BorderFactory.createLineBorder(resourceMap.getColor("tfAddress.border.lineColor"))); // NOI18N
-        tfAddress.setEnabled(false);
-        tfAddress.setName("tfAddress"); // NOI18N
-
-        tfMessage.setBackground(resourceMap.getColor("tfMessage.background")); // NOI18N
-        tfMessage.setText(resourceMap.getString("tfMessage.text")); // NOI18N
-        tfMessage.setBorder(javax.swing.BorderFactory.createLineBorder(resourceMap.getColor("tfMessage.border.lineColor"))); // NOI18N
-        tfMessage.setEnabled(false);
-        tfMessage.setName("tfMessage"); // NOI18N
-
-        jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jSeparator3.setName("jSeparator3"); // NOI18N
-
-        tfSendFrame.setText(resourceMap.getString("tfSendFrame.text")); // NOI18N
-        tfSendFrame.setName("tfSendFrame"); // NOI18N
-
-        jLabel1.setText(resourceMap.getString("jLabel1.text")); // NOI18N
-        jLabel1.setName("jLabel1"); // NOI18N
-
-        tfGetFrame.setText(resourceMap.getString("tfGetFrame.text")); // NOI18N
-        tfGetFrame.setName("tfGetFrame"); // NOI18N
-
-        jLabel3.setText(resourceMap.getString("jLabel3.text")); // NOI18N
-        jLabel3.setName("jLabel3"); // NOI18N
-
-        org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
-                .add(jSeparator3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 1, Short.MAX_VALUE)
-                .add(18, 18, 18)
-                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jPanel1Layout.createSequentialGroup()
-                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jLabel1)
-                            .add(jLabel3))
-                        .add(20, 20, 20)
-                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(tfSendFrame, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
-                            .add(tfGetFrame, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)))
-                    .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                        .add(org.jdesktop.layout.GroupLayout.LEADING, scrWindowMessage)
-                        .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel1Layout.createSequentialGroup()
-                            .add(tfAddress, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 42, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                            .add(tfFunction, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 42, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                            .add(tfMessage, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 216, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                            .add(btnSend, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 65, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
-                .add(22, 22, 22))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jSeparator3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
-            .add(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabel1)
-                    .add(tfSendFrame, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(tfGetFrame, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jLabel3))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(scrWindowMessage, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 176, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(tfMessage, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(tfAddress, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(tfFunction, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(btnSend, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 23, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        org.jdesktop.layout.GroupLayout mainPanelLayout = new org.jdesktop.layout.GroupLayout(mainPanel);
-        mainPanel.setLayout(mainPanelLayout);
-        mainPanelLayout.setHorizontalGroup(
-            mainPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(mainPanelLayout.createSequentialGroup()
-                .add(2, 2, 2)
-                .add(pConfiguration, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(1055, 1055, 1055)
-                .add(jPanel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        mainPanelLayout.setVerticalGroup(
-            mainPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(pConfiguration, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .add(mainPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .add(jPanel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-            .add(jPanel1, 0, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        menuBar.setName("menuBar"); // NOI18N
-
-        fileMenu.setText(resourceMap.getString("fileMenu.text")); // NOI18N
-        fileMenu.setName("fileMenu"); // NOI18N
-
-        javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(iwsk.IWSKApp.class).getContext().getActionMap(IWSKView.class, this);
-        exitMenuItem.setAction(actionMap.get("quit")); // NOI18N
-        exitMenuItem.setText(resourceMap.getString("exitMenuItem.text")); // NOI18N
-        exitMenuItem.setName("exitMenuItem"); // NOI18N
-        fileMenu.add(exitMenuItem);
-
-        menuBar.add(fileMenu);
-
-        helpMenu.setText(resourceMap.getString("helpMenu.text")); // NOI18N
-        helpMenu.setName("helpMenu"); // NOI18N
-
-        aboutMenuItem.setAction(actionMap.get("showAboutBox")); // NOI18N
-        aboutMenuItem.setText(resourceMap.getString("aboutMenuItem.text")); // NOI18N
-        aboutMenuItem.setName("aboutMenuItem"); // NOI18N
-        helpMenu.add(aboutMenuItem);
-
-        menuBar.add(helpMenu);
-
-        setComponent(mainPanel);
-        setMenuBar(menuBar);
+                //---- aboutMenuItem ----
+                aboutMenuItem.setText(bundle.getString("aboutMenuItem.text"));
+                aboutMenuItem.setName("aboutMenuItem");
+                helpMenu.add(aboutMenuItem);
+            }
+            menuBar.add(helpMenu);
+        }
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSendMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSendMouseClicked
@@ -536,7 +813,7 @@ public class IWSKView extends FrameView {
         boolean result = rs.openPort(portNumber, null, speed, dataBits, stopBits, parity, 0);
 
         if (isMaster) {
-            master = new Master(timesToResend, ctimeout, stimeout);    
+            master = new Master(timesToResend, ctimeout, stimeout);
             MasterModbusExecutor masterExecutor = new MasterModbusExecutor();
             master.setMasterExecutor(masterExecutor);
             master.setRs(rs);
@@ -552,7 +829,7 @@ public class IWSKView extends FrameView {
         if (result)
         {
             btnSave.setEnabled(false);
-            btnChange.setEnabled(true);            
+            btnChange.setEnabled(true);
 
             cbPortNumber.setEnabled(false);
             cbSpeed.setEnabled(false);
@@ -588,10 +865,10 @@ public class IWSKView extends FrameView {
             s+= "[" + cbPortNumber.getSelectedItem().toString() + ", ";
             s+= cbSpeed.getSelectedItem().toString() + "bps, ";
             s+= stopBits + "b stopu, ";
-            s+= dataBits + "b danych, ";            
+            s+= dataBits + "b danych, ";
             s+= sParity + ", ";
             s+= "CRLF" + "] \r\n";
-            
+
         }
         else
         {
@@ -607,14 +884,14 @@ public class IWSKView extends FrameView {
         mainPanel.repaint();
     }//GEN-LAST:event_btnSaveMouseClicked
 
-private void btnChangeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChangeMouseClicked
+    private void btnChangeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChangeMouseClicked
 
         btnSave.setEnabled(true);
         btnChange.setEnabled(false);
         btnSend.setEnabled(false);
 
         cbPortNumber.setEnabled(true);
-        cbSpeed.setEnabled(true);        
+        cbSpeed.setEnabled(true);
         cbTransmission.setEnabled(true);
         cbTimeout2.setEnabled(true);
         cbStation.setEnabled(true);
@@ -650,46 +927,45 @@ private void btnChangeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:e
             slave.getRs().closePort();
             slave = null;
         }
-}//GEN-LAST:event_btnChangeMouseClicked
+    }//GEN-LAST:event_btnChangeMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static javax.swing.JButton btnChange;
-    public static javax.swing.JButton btnSave;
-    public static javax.swing.JButton btnSend;
-    public static javax.swing.ButtonGroup buttonGroup1;
-    public static javax.swing.JComboBox cbAddress;
-    public static javax.swing.JComboBox cbPortNumber;
-    public static javax.swing.JComboBox cbRetransmission;
-    public static javax.swing.JComboBox cbSpeed;
-    public static javax.swing.JComboBox cbStation;
-    public static javax.swing.JComboBox cbTimeout2;
-    public static javax.swing.JComboBox cbTimeout3;
-    public static javax.swing.JComboBox cbTransmission;
-    public static javax.swing.JLabel jLabel1;
-    public static javax.swing.JLabel jLabel2;
-    public static javax.swing.JLabel jLabel3;
-    public static javax.swing.JPanel jPanel1;
-    public static javax.swing.JPanel jPanel2;
-    public static javax.swing.JSeparator jSeparator3;
-    public static javax.swing.JLabel lbAddress;
-    public static javax.swing.JLabel lbPortNumber;
-    public static javax.swing.JLabel lbSpeed;
-    public static javax.swing.JLabel lbStation;
-    public static javax.swing.JLabel lbTimeout2;
-    public static javax.swing.JLabel lbTimeout3;
-    public static javax.swing.JLabel lbTransmission;
-    public static javax.swing.JPanel mainPanel;
-    public static javax.swing.JMenuBar menuBar;
-    public static javax.swing.JPanel pConfiguration;
-    public static javax.swing.JScrollPane scrWindowMessage;
-    public static javax.swing.JTextField tfAddress;
-    public static javax.swing.JTextField tfFunction;
-    public static javax.swing.JTextField tfGetFrame;
-    public static javax.swing.JTextField tfMessage;
-    public static javax.swing.JTextArea tfMessageWindow;
-    public static javax.swing.JTextField tfSendFrame;
+    // Generated using JFormDesigner Evaluation license - i0rzs5+8dp9m7tskahhc
+    public static JPanel mainPanel;
+    public static JPanel jPanel1;
+    public static JButton btnSend;
+    public static JTextField tfFunction;
+    public static JTextField tfAddress;
+    public static JTextField tfMessage;
+    public static JSeparator jSeparator3;
+    public static JTextField tfSendFrame;
+    public static JLabel jLabel1;
+    public static JTextField tfGetFrame;
+    public static JLabel jLabel3;
+    public static JScrollPane scrWindowMessage;
+    public static JTextArea tfMessageWindow;
+    public static JPanel pConfiguration;
+    private JLabel lbSpeed;
+    private JLabel lbTimeout2;
+    private JLabel lbTransmission;
+    private JComboBox<String> cbSpeed;
+    private JComboBox<String> cbTransmission;
+    private JComboBox<String> cbTimeout2;
+    private JComboBox cbAddress;
+    private JLabel lbAddress;
+    private JComboBox<String> cbStation;
+    private JLabel lbStation;
+    private JComboBox<String> cbPortNumber;
+    private JLabel lbPortNumber;
+    private JButton btnSave;
+    private JButton btnChange;
+    private JLabel lbTimeout3;
+    private JComboBox<String> cbTimeout3;
+    private JComboBox<String> cbRetransmission;
+    private JLabel jLabel2;
+    public static JMenuBar menuBar;
     // End of variables declaration//GEN-END:variables
-           
+
 
     private JDialog aboutBox;
 }

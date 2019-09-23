@@ -1,0 +1,529 @@
+JFDML JFormDesigner: "7.0.0.5.251" Java: "11.0.3" encoding: "UTF-8"
+
+new FormModel {
+	"i18n.bundlePackage": "iwsk.resources"
+	"i18n.bundleName": "IWSKView"
+	"i18n.autoExternalize": true
+	"i18n.keyPrefix": "IWSKView"
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {space :p:22:p, comp scrWindowMessage:::p:407:p, space :p:28:p, par l {comp jPanel1:::p::p:1, comp pConfiguration:::p::p}, space ::2:x}}"
+			"$verticalGroup": "par l {seq l {space :p:31:p, par l {comp scrWindowMessage:::p:371:p, seq {comp jPanel1:::p:146:p:1, space s:::p, comp pConfiguration:::p:211:p:1}}, space ::24:x}}"
+		} ) {
+			name: "mainPanel"
+			"name": "mainPanel"
+			"preferredSize": new java.awt.Dimension( 920, 430 )
+			auxiliary() {
+				"JavaCodeGenerator.variableModifiers": 9
+			}
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq {comp jSeparator3:::::x, space :p:441:p}, seq t {space ::17:x, par l {seq {comp tfAddress:::p:48:p, space :::p, comp tfFunction:::p:42:p, space :::p, comp tfMessage:::p:216:p, space :::p, comp btnSend:::p:65:p}, par t:l::p {seq l {comp jLabel1:::p::p, space :::x, comp tfSendFrame:::p:320:p:1}, seq l {comp jLabel3:::p::p, space s:::p, comp tfGetFrame:::p:320:p:1}}}}}"
+				"$verticalGroup": "par l {seq {space :p:16:p, par b {comp tfMessage::b:p::p, comp tfFunction::b:p::p, comp btnSend::b:p:23:p, comp tfAddress::b:p::p}, space s:::p, par b {comp jLabel3::b:p::p, comp tfGetFrame::b:p::p}, space :::p, par b {comp jLabel1::b:p::p, comp tfSendFrame::b:p::p}, space :p:249:p, comp jSeparator3:::::x:1}}"
+			} ) {
+				name: "jPanel1"
+				"name": "jPanel1"
+				auxiliary() {
+					"JavaCodeGenerator.variableModifiers": 9
+				}
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnSend"
+					"text": new FormMessage( null, "btnSend.text" )
+					"enabled": false
+					"focusCycleRoot": true
+					"name": "btnSend"
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 9
+					}
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "btnSendMouseClicked", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "tfFunction"
+					"background": new java.awt.Color( 240, 240, 240, 255 )
+					"text": new FormMessage( null, "tfFunction.text" )
+					"border": new javax.swing.border.LineBorder( sfield java.awt.Color black, 1, false )
+					"enabled": false
+					"name": "tfFunction"
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 9
+					}
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "tfAddress"
+					"background": new java.awt.Color( 240, 240, 240, 255 )
+					"text": new FormMessage( null, "tfAddress.text" )
+					"border": new javax.swing.border.LineBorder( sfield java.awt.Color black, 1, false )
+					"enabled": false
+					"name": "tfAddress"
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 9
+					}
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "tfMessage"
+					"background": new java.awt.Color( 240, 240, 240, 255 )
+					"text": new FormMessage( null, "tfMessage.text" )
+					"border": new javax.swing.border.LineBorder( sfield java.awt.Color black, 1, false )
+					"enabled": false
+					"name": "tfMessage"
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 9
+					}
+				} )
+				add( new FormComponent( "javax.swing.JSeparator" ) {
+					name: "jSeparator3"
+					"orientation": 1
+					"name": "jSeparator3"
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 9
+					}
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "tfSendFrame"
+					"text": new FormMessage( null, "tfSendFrame.text" )
+					"name": "tfSendFrame"
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 9
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "jLabel1"
+					"text": new FormMessage( null, "jLabel1.text" )
+					"name": "jLabel1"
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 9
+					}
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "tfGetFrame"
+					"text": new FormMessage( null, "tfGetFrame.text" )
+					"name": "tfGetFrame"
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 9
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "jLabel3"
+					"text": new FormMessage( null, "jLabel3.text" )
+					"name": "jLabel3"
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 9
+					}
+				} )
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrWindowMessage"
+				"autoscrolls": true
+				"name": "scrWindowMessage"
+				auxiliary() {
+					"JavaCodeGenerator.variableModifiers": 9
+				}
+				add( new FormComponent( "javax.swing.JTextArea" ) {
+					name: "tfMessageWindow"
+					"columns": 15
+					"editable": false
+					"font": new java.awt.Font( "Courier", 0, 10 )
+					"lineWrap": true
+					"rows": 5
+					"wrapStyleWord": true
+					"name": "tfMessageWindow"
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 9
+					}
+				} )
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq t {par t {seq t {space :p:29:p, par l {seq l {par l {comp lbSpeed:::p::p, comp lbTransmission::l:p::p}, space :p:25:p, par l {comp cbTransmission:::p:120:p:1, comp cbSpeed:::p:120:p:1}}, seq l {par l {comp lbTimeout2::l:p::p, comp lbTimeout3::l:p::p}, space s:::p, par l {comp cbTimeout2:::p:120:p:1, comp cbTimeout3::l:p:120:p}}}, space :::x, par l {comp lbStation::l:p::p, comp lbAddress::l:p::p, comp jLabel2::l:p::p, comp lbPortNumber::l:p::p}, space :::p, par t:::p {comp cbAddress::l:::x:1, comp cbStation:::::x:1, comp cbPortNumber:::::x, comp cbRetransmission::l:p:120:p}}, seq {space :::x, comp btnSave:::p:69:p, space s:::p, comp btnChange:::p:69:p}}, space :p:25:p}}"
+				"$verticalGroup": "par l {seq l {space :::x, par l {seq {par b {comp lbPortNumber::b:p::p, comp cbPortNumber::b:p::p}, space :p::p, par b {comp lbStation::b:p::p, comp cbStation::b:p::p}, space :p::p, par b {comp lbAddress::b:p::p, comp cbAddress::b:p::p}, space :p::p, par b {comp jLabel2::b:p::p, comp cbRetransmission::b:p::p}}, seq {par b {comp lbSpeed::b:p::p, comp cbSpeed::b:p::p}, space :p:7:p, par b {comp lbTransmission::b:p::p, comp cbTransmission::b:p::p}, space :p::p, par b {comp lbTimeout2::b:p::p, comp cbTimeout2::b:p::p}, space :p::p, par b {comp lbTimeout3::b:p::p, comp cbTimeout3::b:p::p}}}, space u:::p, par b {comp btnChange::b:p::p, comp btnSave::b:p::p}, space :p:80:p}}"
+			} ) {
+				name: "pConfiguration"
+				"name": "pConfiguration"
+				auxiliary() {
+					"JavaCodeGenerator.variableModifiers": 9
+				}
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "lbSpeed"
+					"text": new FormMessage( null, "lbSpeed.text" )
+					"name": "lbSpeed"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "lbTimeout2"
+					"text": new FormMessage( null, "lbTimeout2.text" )
+					"name": "lbTimeout2"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "lbTransmission"
+					"text": new FormMessage( null, "lbTransmission.text" )
+					"name": "lbTransmission"
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "cbSpeed"
+					"model": new javax.swing.DefaultComboBoxModel {
+						selectedItem: "9600"
+						addElement( "9600" )
+						addElement( "4800" )
+						addElement( "2400" )
+						addElement( "1200" )
+						addElement( "600" )
+						addElement( "300" )
+						addElement( "150" )
+					}
+					"name": "cbSpeed"
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "cbTransmission"
+					"model": new javax.swing.DefaultComboBoxModel {
+						selectedItem: "7E1"
+						addElement( "7E1" )
+						addElement( "7O1" )
+						addElement( "7N2" )
+					}
+					"name": "cbTransmission"
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "cbTimeout2"
+					"model": new javax.swing.DefaultComboBoxModel {
+						selectedItem: "0.01"
+						addElement( "0.01" )
+						addElement( "0.02" )
+						addElement( "0.03" )
+						addElement( "0.04" )
+						addElement( "0.05" )
+						addElement( "0.06" )
+						addElement( "0.07" )
+						addElement( "0.08" )
+						addElement( "0.09" )
+						addElement( "0.10" )
+						addElement( "0.11" )
+						addElement( "0.12" )
+						addElement( "0.13" )
+						addElement( "0.14" )
+						addElement( "0.15" )
+						addElement( "0.16" )
+						addElement( "0.17" )
+						addElement( "0.18" )
+						addElement( "0.19" )
+						addElement( "0.20" )
+						addElement( "0.21" )
+						addElement( "0.22" )
+						addElement( "0.23" )
+						addElement( "0.24" )
+						addElement( "0.25" )
+						addElement( "0.26" )
+						addElement( "0.27" )
+						addElement( "0.28" )
+						addElement( "0.29" )
+						addElement( "0.30" )
+						addElement( "0.31" )
+						addElement( "0.32" )
+						addElement( "0.33" )
+						addElement( "0.34" )
+						addElement( "0.35" )
+						addElement( "0.36" )
+						addElement( "0.37" )
+						addElement( "0.38" )
+						addElement( "0.39" )
+						addElement( "0.40" )
+						addElement( "0.41" )
+						addElement( "0.42" )
+						addElement( "0.43" )
+						addElement( "0.44" )
+						addElement( "0.45" )
+						addElement( "0.46" )
+						addElement( "0.47" )
+						addElement( "0.48" )
+						addElement( "0.49" )
+						addElement( "0.50" )
+						addElement( "0.51" )
+						addElement( "0.52" )
+						addElement( "0.53" )
+						addElement( "0.54" )
+						addElement( "0.55" )
+						addElement( "0.56" )
+						addElement( "0.57" )
+						addElement( "0.58" )
+						addElement( "0.59" )
+						addElement( "0.60" )
+						addElement( "0.61" )
+						addElement( "0.62" )
+						addElement( "0.63" )
+						addElement( "0.64" )
+						addElement( "0.65" )
+						addElement( "0.66" )
+						addElement( "0.67" )
+						addElement( "0.68" )
+						addElement( "0.69" )
+						addElement( "0.70" )
+						addElement( "0.71" )
+						addElement( "0.72" )
+						addElement( "0.73" )
+						addElement( "0.74" )
+						addElement( "0.75" )
+						addElement( "0.76" )
+						addElement( "0.77" )
+						addElement( "0.78" )
+						addElement( "0.79" )
+						addElement( "0.80" )
+						addElement( "0.81" )
+						addElement( "0.82" )
+						addElement( "0.83" )
+						addElement( "0.84" )
+						addElement( "0.85" )
+						addElement( "0.86" )
+						addElement( "0.87" )
+						addElement( "0.88" )
+						addElement( "0.89" )
+						addElement( "0.90" )
+						addElement( "0.91" )
+						addElement( "0.92" )
+						addElement( "0.93" )
+						addElement( "0.94" )
+						addElement( "0.95" )
+						addElement( "0.96" )
+						addElement( "0.97" )
+						addElement( "0.98" )
+						addElement( "0.99" )
+						addElement( "1.00" )
+					}
+					"name": "cbTimeout2"
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "cbAddress"
+					"enabled": false
+					"name": "cbAddress"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "lbAddress"
+					"text": new FormMessage( null, "lbAddress.text" )
+					"name": "lbAddress"
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "cbStation"
+					"model": new javax.swing.DefaultComboBoxModel {
+						selectedItem: "Master"
+						addElement( "Master" )
+						addElement( "Slave" )
+					}
+					"name": "cbStation"
+					addEvent( new FormEvent( "java.awt.event.ItemListener", "itemStateChanged", "cbStationItemStateChanged", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "lbStation"
+					"text": new FormMessage( null, "lbStation.text" )
+					"name": "lbStation"
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "cbPortNumber"
+					"model": new javax.swing.DefaultComboBoxModel {
+						selectedItem: "Item 1"
+						addElement( "Item 1" )
+						addElement( "Item 2" )
+						addElement( "Item 3" )
+						addElement( "Item 4" )
+					}
+					"name": "cbPortNumber"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "lbPortNumber"
+					"text": new FormMessage( null, "lbPortNumber.text" )
+					"name": "lbPortNumber"
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnSave"
+					"text": new FormMessage( null, "btnSave.text" )
+					"name": "btnSave"
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "btnSaveMouseClicked", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnChange"
+					"text": new FormMessage( null, "btnChange.text" )
+					"enabled": false
+					"name": "btnChange"
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "btnChangeMouseClicked", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "lbTimeout3"
+					"text": new FormMessage( null, "lbTimeout3.text" )
+					"name": "lbTimeout3"
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "cbTimeout3"
+					"model": new javax.swing.DefaultComboBoxModel {
+						selectedItem: "0.1"
+						addElement( "0.1" )
+						addElement( "0.2" )
+						addElement( "0.3" )
+						addElement( "0.4" )
+						addElement( "0.5" )
+						addElement( "0.6" )
+						addElement( "0.7" )
+						addElement( "0.8" )
+						addElement( "0.9" )
+						addElement( "1.0" )
+						addElement( "1.1" )
+						addElement( "1.2" )
+						addElement( "1.3" )
+						addElement( "1.4" )
+						addElement( "1.5" )
+						addElement( "1.6" )
+						addElement( "1.7" )
+						addElement( "1.8" )
+						addElement( "1.9" )
+						addElement( "2.0" )
+						addElement( "2.1" )
+						addElement( "2.2" )
+						addElement( "2.3" )
+						addElement( "2.4" )
+						addElement( "2.5" )
+						addElement( "2.6" )
+						addElement( "2.7" )
+						addElement( "2.8" )
+						addElement( "2.9" )
+						addElement( "3.0" )
+						addElement( "3.1" )
+						addElement( "3.2" )
+						addElement( "3.3" )
+						addElement( "3.4" )
+						addElement( "3.5" )
+						addElement( "3.6" )
+						addElement( "3.7" )
+						addElement( "3.8" )
+						addElement( "3.9" )
+						addElement( "4.0" )
+						addElement( "4.1" )
+						addElement( "4.2" )
+						addElement( "4.3" )
+						addElement( "4.4" )
+						addElement( "4.5" )
+						addElement( "4.6" )
+						addElement( "4.7" )
+						addElement( "4.8" )
+						addElement( "4.9" )
+						addElement( "5.0" )
+						addElement( "5.1" )
+						addElement( "5.2" )
+						addElement( "5.3" )
+						addElement( "5.4" )
+						addElement( "5.5" )
+						addElement( "5.6" )
+						addElement( "5.7" )
+						addElement( "5.8" )
+						addElement( "5.9" )
+						addElement( "6.0" )
+						addElement( "6.1" )
+						addElement( "6.2" )
+						addElement( "6.3" )
+						addElement( "6.4" )
+						addElement( "6.5" )
+						addElement( "6.6" )
+						addElement( "6.7" )
+						addElement( "6.8" )
+						addElement( "6.9" )
+						addElement( "7.0" )
+						addElement( "7.1" )
+						addElement( "7.2" )
+						addElement( "7.3" )
+						addElement( "7.4" )
+						addElement( "7.5" )
+						addElement( "7.6" )
+						addElement( "7.7" )
+						addElement( "7.8" )
+						addElement( "7.9" )
+						addElement( "8.0" )
+						addElement( "8.1" )
+						addElement( "8.2" )
+						addElement( "8.3" )
+						addElement( "8.4" )
+						addElement( "8.5" )
+						addElement( "8.6" )
+						addElement( "8.7" )
+						addElement( "8.8" )
+						addElement( "8.9" )
+						addElement( "9.0" )
+						addElement( "9.1" )
+						addElement( "9.2" )
+						addElement( "9.3" )
+						addElement( "9.4" )
+						addElement( "9.5" )
+						addElement( "9.6" )
+						addElement( "9.7" )
+						addElement( "9.8" )
+						addElement( "9.9" )
+						addElement( "10.0" )
+					}
+					"name": "cbTimeout3"
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "cbRetransmission"
+					"model": new javax.swing.DefaultComboBoxModel {
+						selectedItem: "5"
+						addElement( "5" )
+						addElement( "4" )
+						addElement( "3" )
+						addElement( "2" )
+						addElement( "1" )
+						addElement( "0" )
+					}
+					"name": "cbRetransmission"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "jLabel2"
+					"text": new FormMessage( null, "jLabel2.text" )
+					"name": "jLabel2"
+				} )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 920, 430 )
+		} )
+		add( new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
+			name: "menuBar"
+			"name": "menuBar"
+			auxiliary() {
+				"JavaCodeGenerator.variableModifiers": 9
+			}
+			add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+				name: "fileMenu"
+				"text": new FormMessage( null, "fileMenu.text" )
+				"name": "fileMenu"
+				auxiliary() {
+					"JavaCodeGenerator.variableLocal": true
+				}
+				add( new FormComponent( "javax.swing.JMenuItem" ) {
+					name: "exitMenuItem"
+					"text": new FormMessage( null, "exitMenuItem.text" )
+					"name": "exitMenuItem"
+					auxiliary() {
+						"JavaCodeGenerator.variableLocal": true
+					}
+				} )
+			} )
+			add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+				name: "helpMenu"
+				"text": new FormMessage( null, "helpMenu.text" )
+				"name": "helpMenu"
+				auxiliary() {
+					"JavaCodeGenerator.variableLocal": true
+				}
+				add( new FormComponent( "javax.swing.JMenuItem" ) {
+					name: "aboutMenuItem"
+					"text": new FormMessage( null, "aboutMenuItem.text" )
+					"name": "aboutMenuItem"
+					auxiliary() {
+						"JavaCodeGenerator.variableLocal": true
+					}
+				} )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 30, 475 )
+		} )
+		add( new FormNonVisual( "javax.swing.ButtonGroup" ) {
+			name: "buttonGroup1"
+			auxiliary() {
+				"JavaCodeGenerator.variableModifiers": 9
+			}
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 25, 515 )
+		} )
+	}
+}
